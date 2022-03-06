@@ -17,25 +17,44 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #424242;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
 }
 
 nav {
-  background-color: white;
+  background-color: #6661F1;
+  /* opacity: 0.5; */
+  height: 7.5rem;
   font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  align-items: center;
+  padding-right: 2rem;
+  height: 100px;
+  width: 500px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 main {
+  background-color: #FFB700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 700px;
+  width: 500px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 h1 {
