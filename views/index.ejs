@@ -2,6 +2,8 @@
 <%- include('./partials/nav') %>
 
 <main>
+  <h1>Find Your Zodiac Signs</h1>
+
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
@@ -11,6 +13,9 @@
       />
     </div>
   <% } %>
+  
+  <p>Find your Sun Sign and its Eastern counterpart!</p>
+
 </main>
 
 <%- include('./partials/footer') %>
