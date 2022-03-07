@@ -10,8 +10,6 @@ const commentSchema = new mongoose.Schema({
 })
 
 const zodiacSchema = new Schema ({
-  startDate: Date,
-  endDate: Date,
   wZodName: String,
   eZodName: String,
   wZodDesc: String,
