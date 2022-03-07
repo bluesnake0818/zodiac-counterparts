@@ -17,7 +17,7 @@ import('./config/passport.js')
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as zodiacRouter } from './routes/zodiacs.js'
+import { router as zodiacsRouter } from './routes/zodiacs.js'
 
 // create the express app
 const app = express()
@@ -59,7 +59,7 @@ app.use(passport.session())
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/zodiacs, zodiacsRouter')
+app.use('/zodiacs', zodiacsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
