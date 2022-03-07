@@ -1,21 +1,28 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/zodiacs/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <section>
-    <h1><%= zodiac.title %></h1>
-    
-    <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
-    <p><%= zodiac.wZodName %></p>
-    <p><%= zodiac.wZodDesc %></p>
-    <img src="<%= zodiac.eZodImgURL %>" alt="eastern zodiac">
-    <p><%= zodiac.eZodName %></p>
-    <p><%= zodiac.eZodDesc %></p>
+  <!-- <a href="/zodiacs">Return</a> will move to Nav -->
+    <h1><%= title %></h1>
+    <div id="western-zod">
+      <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
+      <p id="name"><%= zodiac.wZodName %></p>
+      <p id="desc"><%= zodiac.wZodDesc %></p>
+    </div>
+    <div id="estern-zod">
+      <img src="<%= zodiac.eZodImgURL %>" alt="eastern zodiac">
+      <p id="name"><%= zodiac.eZodName %></p>
+      <p id="desc"><%= zodiac.eZodDesc %></p>
+    </div>
 
-    
-    <p><%= zodiac.wPollCount %></p>
-    <p><%= zodiac.ePollCount %></p>
+    <p id="cta">login using Google Account and find your zodiac signs for free!</p>
+    <!-- <p><%= zodiac.wZodPollCount %></p> -->
+    <!-- <p><%= zodiac.eZodPollCount %></p> -->
+  
   </section>
+
 </main>
 
 <%- include('../partials/footer') %>

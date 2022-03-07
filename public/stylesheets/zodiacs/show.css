@@ -1,0 +1,43 @@
+h1 {
+  margin-bottom: 5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#western-zod, #estern-zod {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  flex-wrap: wrap;
+  min-width: 46rem;
+}
+
+
+
+p#name {
+  text-align: center;
+  width: 10rem;
+  font-weight: bold;
+  /* margin: 0; */
+  /* text-align: left; */
+}
+
+p#desc {
+  text-align: left;
+  width: 30rem;
+  font-size: 1.4rem;
+
+  /* margin: 0; */
+  /* text-align: left; */
+}
+
+p#cta {
+  margin-top: 1.5rem;
+}
