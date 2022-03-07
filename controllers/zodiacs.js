@@ -8,7 +8,18 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  console.log("sanity check")
+  // console.log("sanity check")
+  Zodiac.findById(req.params.id)
+  .then(zodiac => {
+    res.render('zodiacs/show', {
+      zodiac,
+      title: `${zodiac.wZodName} vs. ${zodiac.eZodName}`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/zodiacs')
+  })
 }
 
 function create(req, res) {

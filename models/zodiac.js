@@ -16,6 +16,8 @@ const zodiacSchema = new Schema ({
   eZodDesc: String,
   wZodPollCount: Number,
   eZodPollCount: Number,
+  wZodImgURL: String,
+  eZodImgURL: String,
   comments: [commentSchema],
 }, {
   timestamps: true

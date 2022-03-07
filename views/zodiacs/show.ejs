@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <section>
+    <h1><%= zodiac.title %></h1>
+    
+    <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
+    <p><%= zodiac.wZodName %></p>
+    <p><%= zodiac.wZodDesc %></p>
+    <img src="<%= zodiac.eZodImgURL %>" alt="eastern zodiac">
+    <p><%= zodiac.eZodName %></p>
+    <p><%= zodiac.eZodDesc %></p>
+
+    
+    <p><%= zodiac.wPollCount %></p>
+    <p><%= zodiac.ePollCount %></p>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
