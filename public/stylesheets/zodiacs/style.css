@@ -1,0 +1,31 @@
+h1 {
+  margin-bottom: 5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p
+{   
+  margin: 0 3rem 0 3rem;
+}
+
+#zod-signs-area {
+  margin-top: 5rem;
+  width: 36rem;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#zod-signs-area > #first-row, #second-row, #third-row, #fourth-row {
+  display: flex;
+  justify-content: space-between;
+}
+
