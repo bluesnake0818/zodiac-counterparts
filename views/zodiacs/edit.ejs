@@ -1,23 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/zodiacs/edit.css" />
+<%- include('../partials/nav') %>
 
-      <% if(user.profile.hasVoted) { %> 
-        <h2>Poll Results</h2>
-        <p><%= zodiac.wZodName %>: <%= zodiac.wZodPollCount %></p>
-        <p><%= zodiac.eZodName %>: <%= zodiac.eZodPollCount %></p>
-      <% } else { %> 
-        <form id="poll" action="/zodiacs/<%= zodiac._id %>?_method=PUT" method="POST">
-          <p>Q Which zodiac is more accurate? (vote only if you belong to this group)</p>
-          <div>
-            <label>
-              <%= zodiac.wZodName %>
-              <input type="radio" id="western-zod-btn" name="<%= zodiac.wZodPollCount %>">
-            </label>
-            <label>
-              <%= zodiac.eZodName %>
-              <input type="radio" id="eastern-zod-btn" name="<%= zodiac.eZodPollCount %>">
-            </label>
-          </div>
-          
-          <button type="submit">Submit</button>
-        </form>
-      
-      <% } %>
+<main>
+  <section>
+    <form id="poll" action="/zodiacs/<%= zodiac._id %>?_method=PUT" method="POST">
+      <p>Q Which zodiac is more accurate? (vote only if you belong to this group)</p>
+      <div>
+        <label>
+          <%= zodiac.wZodName %>
+          <input type="radio" id="western-zod-btn" name="<%= zodiac.wZodPollCount %>">
+        </label>
+        <label>
+          <%= zodiac.eZodName %>
+          <input type="radio" id="eastern-zod-btn" name="<%= zodiac.eZodPollCount %>">
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

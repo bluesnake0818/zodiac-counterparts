@@ -33,6 +33,19 @@ function create(req, res) {
   })
 }
 
+function edit(req, res) {
+  Zodiac.findById(req.params.id)
+  .then(zodiac => {
+    res.render('zodiacs/edit', {
+      zodiac, 
+      title: "Take Poll"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/zodiacs')
+  })
+}
 // function update(req, res) {
 //   Zodiac.findById(req.params.id)
 //   .then(zodiac =>
@@ -52,5 +65,6 @@ export {
   index,
   show,
   create,
-  update,
+  edit,
+  // update,
 }
