@@ -4,18 +4,31 @@
 
 <main>
   <section>
-    <form id="poll" action="/zodiacs/<%= zodiac._id %>?_method=PUT" method="POST">
-      <p>Q Which zodiac is more accurate? (vote only if you belong to this group)</p>
-      <div>
-        <label>
-          <%= zodiac.wZodName %>
-          <input type="radio" id="western-zod-btn" name="<%= zodiac.wZodPollCount %>">
-        </label>
-        <label>
-          <%= zodiac.eZodName %>
-          <input type="radio" id="eastern-zod-btn" name="<%= zodiac.eZodPollCount %>">
-        </label>
-      </div>
+    <form action="/zodiacs/<%= zodiac._id %>?_method=PUT" method="POST">
+      <label>
+        <%= zodiac.wZodName %>
+        <input type="number"
+        name="wZodPollCount"
+        value="<%= zodiac.wZodPollCount %>"
+        >
+        <input type="text"
+        name="wZodName"
+        value="<%= zodiac.wZodName %>"
+        >
+
+      </label>
+      <label>
+        <%= zodiac.eZodName %>
+        <input type="number"
+        name="eZodPollCount"
+        value="<%= zodiac.eZodPollCount %>"
+        >
+        <input type="text"
+        name="eZodName"
+        value="<%= zodiac.eZodName %>"
+        >
+
+      </label>
       <button type="submit">Submit</button>
     </form>
   </section>

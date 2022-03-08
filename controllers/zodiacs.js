@@ -46,25 +46,26 @@ function edit(req, res) {
     res.redirect('/zodiacs')
   })
 }
-// function update(req, res) {
-//   Zodiac.findById(req.params.id)
-//   .then(zodiac =>
-//     // req.user.profile.hasVoted = true
-//     zodiac.updateOne(req.body, {new: true})
-//     .then(() => {
-//       res.redirect(`/zodiac/${zodiac.id}`)
-//     })
-//   )
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect(`zodiac`)
-//   })
-// }
+
+function update(req, res) {
+  // console.log("update!")
+  Zodiac.findById(req.params.id)
+  .then(zodiac => {
+    zodiac.updateOne(req.body, {new: true})
+    .then(() => {
+      res.redirect(`/zodiacs/${zodiac.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`zodiac`)
+  }) 
+}
 
 export {
   index,
   show,
   create,
   edit,
-  // update,
+  update,
 }
