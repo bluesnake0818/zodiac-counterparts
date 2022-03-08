@@ -40,3 +40,44 @@ p#desc {
 p#cta {
   margin-top: 1.5rem;
 }
+
+p#question {
+  margin: 1.5rem 2rem 1.5rem 2rem;
+}
+
+form#poll {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  margin: 2rem 0 3rem 0;
+  min-width: 40rem;
+}
+
+form#poll > label {
+  display: flex;
+  justify-content: space-around;
+  min-width: 20rem;
+  align-items: center;
+}
+
+
+#poll-results {
+  display: flex;
+  justify-content: space-around;
+  min-width: 40rem;
+  min-height: 12rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+#w-poll-results, #e-poll-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#e-zod-count, #w-zod-count {
+  color: #FF6E6E;
+  
+}

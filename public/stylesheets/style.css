@@ -54,7 +54,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  height: 700px;
+  height: 1000px;
   width: 500px;
   font-family: var(--roboto_mono);
   border-bottom-left-radius: 10px;

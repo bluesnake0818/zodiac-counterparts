@@ -18,20 +18,17 @@
     </div>
 
     <% if(user) { %> 
-      <h2>Q: Which zodiac is more accurate? (vote only if you belong to this group)</h2>
-      <!-- <form action="/zodiacs/<%= zodiac.id %>/edit" method="GET">
-        <button class="btn" type="submit">Vote</button>
-      </form> -->
-      <form action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
+      <p id="question">Q: Which zodiac is more accurate? (vote only if you belong to this group)</p>
+      <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
         <label>
           <%= zodiac.wZodName %>
           <input type="radio" name="name" value="<%= zodiac.wZodName %>" checked>
           <%= zodiac.eZodName %>
           <input type="radio" name="name" value="<%= zodiac.eZodName %>"> 
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit-btn">Submit</button>
       </form>
-      <% 
+      <%
         let wCount = 0
         let eCount = 0
         zodiac.polls.forEach(poll => { 
@@ -42,10 +39,20 @@
           }
         })
       %>
-        <p> <%= zodiac.wZodName %>: <%= wCount %> </p>
-        <p> <%= zodiac.eZodName %>: <%= eCount %> </p>
+      <div id="poll-results">
+        <div id="w-poll-results">
+          <div id="w-zod-name"> <%= zodiac.wZodName %> </div>
+          <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
+          <div id="w-zod-count"><%= wCount %> </div>
+        </div>
+        <div id="e-poll-results">
+          <div id="e-zod-name"> <%= zodiac.eZodName %> </div>
+          <img src="<%= zodiac.eZodImgURL %>" alt="western zodiac">
+          <div id="e-zod-count"> <%= eCount %> </div>
+        </div>
+      </div>
     <% } else { %> 
-      <p id="cta">login using Google Account and find your zodiac signs for free!</p>
+      <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
     <% } %> 
       
   </section>
