@@ -28,20 +28,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   font-size: 24px;
 }
 
 nav {
   background-color: #6661F1;
   /* opacity: 0.5; */
-  height: 7.5rem;
+  min-height: 7.5rem;
   font-size: 1.6rem;
   display: flex;
   justify-content: right;
   align-items: center;
   padding-right: 2rem;
-  height: 100px;
   width: 500px;
   font-family: var(--roboto_mono);
   border-top-left-radius: 10px;
@@ -54,7 +53,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  height: 1200px;
+  min-height: 1500px;
   width: 500px;
   font-family: var(--roboto_mono);
   border-bottom-left-radius: 10px;

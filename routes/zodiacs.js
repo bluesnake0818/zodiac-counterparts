@@ -22,7 +22,8 @@ router.post('/:id/polls', zodiacsCtrl.createPoll)
 // POST - localhost:3000/zodiacs/:id/comments
 router.post('/:id/comments', zodiacsCtrl.postComment)
 
-
+// DELETE - localhost:3000/zodiacs/comments/:id
+router.delete('/comments/:id', zodiacsCtrl.deleteComment)
 
 // PUT - localhost:3000/zodiacs/:id
 // router.put('/:id', zodiacsCtrl.update)

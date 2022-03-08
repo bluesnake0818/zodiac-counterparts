@@ -96,6 +96,22 @@ function postComment(req, res) {
   })
 }
 
+function deleteComment(req, res) {
+  // console.log("req.params.id" + req.params.id)
+  Zodiac.findById(req.params.id)
+  .then(zodiac => {
+    zodiac.comment.remove({_id: req.params.id})
+    zodiac.save()
+    .then(() => {
+      res.redirect(`/zodiacs/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/zodiacs/${req.params.id}`)
+  })
+}
+
 export {
   index,
   show,
@@ -104,4 +120,5 @@ export {
   update,
   createPoll,
   postComment,
+  deleteComment,
 }

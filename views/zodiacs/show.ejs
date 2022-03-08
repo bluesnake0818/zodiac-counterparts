@@ -69,8 +69,17 @@
           <% if(zodiac.comments.length) { %> 
             <% zodiac.comments.forEach(comment => { %> 
               <p><%= comment.content %></p>
+              <% console.log(comment.id) %> 
+              <form 
+                action="/zodiacs/comments/<%= comment.id %>?_method=DELETE"
+                method="POST"
+                style="display: inline-block;"
+              >
+                <button type="submit">X</button>
+              </form>
             <% }) %>
           <% } %> 
+
         </div>
       </div>
 
