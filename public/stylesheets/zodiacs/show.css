@@ -79,5 +79,8 @@ form#poll > label {
 
 #e-zod-count, #w-zod-count {
   color: #FF6E6E;
-  
+}
+
+#comment-area {
+  margin-top: 3rem;
 }
