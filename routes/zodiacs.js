@@ -11,6 +11,11 @@ router.get('/:id', zodiacsCtrl.show)
 // POST - localhost:3000/zodiacs
 router.post('/', zodiacsCtrl.create)
 
+// PUT - localhost:3000/zodiacs/:id
+// router.put('/:id', zodiacsCtrl.update)
+
+// isLoggedIn,
+
 export {
   router
 }

@@ -1,3 +1,4 @@
+// import res from 'express/lib/response'
 import { Zodiac } from '../models/zodiac.js'
 
 function index(req, res) {
@@ -32,8 +33,24 @@ function create(req, res) {
   })
 }
 
+// function update(req, res) {
+//   Zodiac.findById(req.params.id)
+//   .then(zodiac =>
+//     // req.user.profile.hasVoted = true
+//     zodiac.updateOne(req.body, {new: true})
+//     .then(() => {
+//       res.redirect(`/zodiac/${zodiac.id}`)
+//     })
+//   )
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect(`zodiac`)
+//   })
+// }
+
 export {
   index,
   show,
   create,
+  update,
 }

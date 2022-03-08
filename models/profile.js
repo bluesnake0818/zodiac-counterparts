@@ -6,7 +6,7 @@ const profileSchema = new mongoose.Schema({
   name: String,
   dob: Date,
   avatar: String,
-  hasVoted: Boolean,
+  // hasVoted: Boolean,
   zodiac: {type: Schema.Types.ObjectId, ref: "Zodiac"}
 }, {
   timestamps: true

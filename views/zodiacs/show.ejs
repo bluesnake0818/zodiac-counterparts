@@ -19,18 +19,14 @@
 
 
     <% if(user) { %> 
-
-      <h2>Poll Results</h2>
+      <p>Q: Which zodiac is more accurate? (vote only if you belong to this group)</p>
       <p><%= zodiac.wZodName %>: <%= zodiac.wZodPollCount %></p>
       <p><%= zodiac.eZodName %>: <%= zodiac.eZodPollCount %></p>
-
     <% } else { %> 
-    <p id="cta">login using Google Account and find your zodiac signs for free!</p>
-
+      <p id="cta">login using Google Account and find your zodiac signs for free!</p>
     <% } %> 
       
   </section>
-
 </main>
 
 <%- include('../partials/footer') %>
