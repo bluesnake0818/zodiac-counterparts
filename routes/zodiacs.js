@@ -16,6 +16,9 @@ router.post('/', zodiacsCtrl.create)
 // PUT - localhost:3000/zodiacs/:id
 router.put('/:id', zodiacsCtrl.update)
 
+// POST - localhost:3000/zodiacs/:id/polls
+router.post('/:id/polls', zodiacsCtrl.createPoll)
+
 
 // PUT - localhost:3000/zodiacs/:id
 // router.put('/:id', zodiacsCtrl.update)

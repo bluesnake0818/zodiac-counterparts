@@ -62,10 +62,29 @@ function update(req, res) {
   }) 
 }
 
+function createPoll(req, res) {
+  console.log("createPoll")
+  console.log(req.params.id)
+  Zodiac.findById(req.params.id)
+  .then(zodiac => {
+    console.log(zodiac)
+    zodiac.polls.push(req.body)
+    zodiac.save()
+    .then(() => {
+      res.redirect(`/zodiacs/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/zodiacs/${req.params.id}`)
+  })
+}
+
 export {
   index,
   show,
   create,
   edit,
   update,
+  createPoll,
 }

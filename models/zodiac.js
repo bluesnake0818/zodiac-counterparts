@@ -9,16 +9,22 @@ const commentSchema = new mongoose.Schema({
   timestamps: true
 })
 
+const pollSchema = new mongoose.Schema({
+  author: {type: Schema.Types.ObjectId, ref: "Profile"},
+  name: String,
+}, {
+  timestamps: true
+})
+
 const zodiacSchema = new Schema ({
   wZodName: String,
   eZodName: String,
   wZodDesc: String,
   eZodDesc: String,
-  wZodPollCount: Number,
-  eZodPollCount: Number,
   wZodImgURL: String,
   eZodImgURL: String,
   comments: [commentSchema],
+  polls: [pollSchema],
 }, {
   timestamps: true
 })
