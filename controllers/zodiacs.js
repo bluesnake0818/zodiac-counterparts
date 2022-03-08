@@ -80,6 +80,22 @@ function createPoll(req, res) {
   })
 }
 
+function postComment(req, res) {
+  console.log('post comment')
+  Zodiac.findById(req.params.id)
+  .then(Zodiac => {
+    Zodiac.comments.push(req.body)
+    Zodiac.save()
+    then(() => {
+      res.redirect(`/zodiacs/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/zodiacs/${req.params.id}`)
+  })
+}
+
 export {
   index,
   show,
@@ -87,4 +103,5 @@ export {
   edit,
   update,
   createPoll,
+  postComment,
 }

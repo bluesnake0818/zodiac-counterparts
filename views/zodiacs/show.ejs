@@ -4,7 +4,6 @@
 
 <main>
   <section>
-  <!-- <a href="/zodiacs">Return</a> will move to Nav -->
     <h1><%= title %></h1>
     <div id="western-zod">
       <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
@@ -22,7 +21,7 @@
       <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
         <label>
           <%= zodiac.wZodName %>
-          <input type="radio" name="name" value="<%= zodiac.wZodName %>" checked>
+          <input type="radio" name="name" value="<%= zodiac.wZodName %>">
           <%= zodiac.eZodName %>
           <input type="radio" name="name" value="<%= zodiac.eZodName %>"> 
         </label>
@@ -54,8 +53,27 @@
 
       <div id="comment-area">
         <p id="comment-title">Comments</p>
-        
+
+        <div id="post-comment">
+          
+          <form action="/zodiacs/<%= zodiac._id %>/comments" method="POST">
+            <label>
+              <input type="text" name="content" placeholder="Add a comment..." autocomplete="off">
+            </label> 
+            <button type="submit">Submit</button>
+          </form>
+          
+        </div>
+
+        <div id="show-comments">
+          <% if(zodiac.comments.length) { %> 
+            <% zodiac.comments.forEach(comment => { %> 
+              <p><%= comment.content %></p>
+            <% }) %>
+          <% } %> 
+        </div>
       </div>
+
     <% } else { %> 
       <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
     <% } %> 
