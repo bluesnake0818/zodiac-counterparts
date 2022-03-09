@@ -6,6 +6,7 @@ import * as memesCtrl from '../controllers/memes.js'
 const router = Router()
 
 router.get('/', memesCtrl.index)
+router.get('/:id', memesCtrl.show)
 
 router.post('/', isLoggedIn, memesCtrl.create)
 

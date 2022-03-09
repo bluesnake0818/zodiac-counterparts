@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/memes/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <section>
+    <p>From the studio of <%= meme.author.name %>...</p>
+    <h1><%= meme.title %> 😜😜😜😜</h1>
+    <h2>Show Meme: <a href="<%= meme.url %>"><%= meme.title %></a></h2>
+    <h2>This meme is <%= meme.funny ? 'funny! 😋' : 'not funny! 😫' %></h2>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

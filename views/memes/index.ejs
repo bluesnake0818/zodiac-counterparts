@@ -21,7 +21,7 @@
         </label>
         <label>
           URL: 
-          <input type="text" name="URL" autocomplete="off">
+          <input type="text" name="url" autocomplete="off">
         </label>
         <label>
           Funny?
@@ -34,7 +34,10 @@
     <h2>All the Memes!</h2>
     <ul>
     <% memes.forEach(meme => { %>
-      <li> <%= meme.title %> is <%= meme.funny ? 'funny' : 'not funny' %></li>
+      <li> 
+        😹
+        <a href="/memes/<%= meme._id %>"><%= meme.title %></a> 
+        is <%= meme.funny ? 'funny' : 'not funny' %></li>
     <% }) %>
     </ul>
   </section>

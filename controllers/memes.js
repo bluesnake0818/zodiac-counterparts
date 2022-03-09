@@ -27,7 +27,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Meme.findById(req.params.id)
+  .populate("author")
+  .then(meme => {
+    res.render('memes/show', {
+      meme,
+      title: "🐶Meme show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/memes')
+  })
+}
+
 export {
   index, 
   create,
+  show,
 }
