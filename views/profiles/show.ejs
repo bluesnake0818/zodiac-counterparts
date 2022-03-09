@@ -25,7 +25,7 @@
         <input type="text" name="mood" autocomplete="off">
       </label>
       <label>
-        comment: 
+        Comment: 
         <input type="text" name="comment" autocomplete="off">
       </label>
       <button type="submit">Post a thought</button>
@@ -41,6 +41,9 @@
       <p>I'm feeling <%= thought.mood %> today. </p>
       <p><%= thought.comment %> </p> 
       <% if (isSelf) { %> 
+        <form action="/profiles/<%= thought._id %>/edit" method="GET">
+          <button class="btn" type="submit">Edit this thought</button>
+        </form>
         <form 
           action="/profiles/thoughts/<%= thought._id %>?_method=DELETE" 
           method="POST"
@@ -57,6 +60,8 @@
       <%= isSelf ? "You haven't" : `${profile.name} hasn't` %> posted any thoughts yet.
     </h2> 
   <% } %> 
+
+
 </main>
 
 

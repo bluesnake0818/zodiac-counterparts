@@ -48,6 +48,50 @@ function createThought(req, res) {
   })
 }
 
+function editThought(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    res.render('profiles/edit', {
+      profile,
+      title: "edit thought"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
+function updateThought(req, res) {
+  Profile.findById(req.params.id)
+  .then((profile) => {
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      const isSelf = self._id.equals(profile._id)
+      profile.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles`)
+  })
+}
+    
+  // })
+
+  // .then(profile => {
+  //   if (profile._id.equals(req.user.profile._id)) {
+  //     profile.updateOne(req.body, {new: true})
+  //     .then(()=> {
+  //       res.redirect(`/profile/${profile._id}`)
+  //     })
+  //   } else {
+  //     throw new Error ('🚫 Not authorized 🚫')
+  //   }
+
 function deleteThought(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
@@ -68,4 +112,6 @@ export {
   show,
   createThought,
   deleteThought,
+  editThought,
+  updateThought,
 }

@@ -20,6 +20,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as zodiacsRouter } from './routes/zodiacs.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as memesRouter } from './routes/memes.js'
 
 // create the express app
 const app = express()
@@ -66,6 +67,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/zodiacs', zodiacsRouter)
 app.use('/profiles', profilesRouter)
+app.use('/memes', memesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
