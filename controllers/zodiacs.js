@@ -1,6 +1,7 @@
 // import res from 'express/lib/response'
 import { Zodiac } from '../models/zodiac.js'
 
+
 function index(req, res) {
   // console.log("zodiac")
   res.render('zodiacs/index', {
@@ -12,6 +13,7 @@ function show(req, res) {
   // console.log("sanity check")
   Zodiac.findById(req.params.id)
   .then(zodiac => {
+    console.log("show zodiac: " + zodiac)
     res.render('zodiacs/show', {
       zodiac,
       title: `${zodiac.wZodName} vs. ${zodiac.eZodName}`
@@ -83,9 +85,9 @@ function createPoll(req, res) {
 function postComment(req, res) {
   console.log('post comment')
   Zodiac.findById(req.params.id)
-  .then(Zodiac => {
-    Zodiac.comments.push(req.body)
-    Zodiac.save()
+  .then(zodiac => {
+    zodiac.comments.push(req.body)
+    zodiac.save()
     then(() => {
       res.redirect(`/zodiacs/${req.params.id}`)
     })
@@ -97,20 +99,44 @@ function postComment(req, res) {
 }
 
 function deleteComment(req, res) {
-  // console.log("req.params.id" + req.params.id)
-  Zodiac.findById(req.params.id)
-  .then(zodiac => {
-    zodiac.comment.remove({_id: req.params.id})
-    zodiac.save()
-    .then(() => {
-      res.redirect(`/zodiacs/${req.params.id}`)
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect(`/zodiacs/${req.params.id}`)
-  })
+  const a = Zodiac.findOne({ 'comments._id': req.params.id}).parent.id
+  console.log(a)
 }
+  // .then(comment => {
+  //   console.log(comment)
+  // })
+
+  // Zodiac.findById(req.params.id)
+  // console.log(comments)
+  // Zodiac.comments.findByIdAndRemove(req.params.id)
+  // console.log(Zodiac.findByIdAndRemove(req.params.id))
+  // Profile.findById(req.user.profile._id)
+  // .then(profile => {
+  //   profile.cats.remove({_id: req.params.id})
+  //   profile.save()
+  //   .then(()=> {
+  //     res.redirect(`/profiles/${req.user.profile._id}`)
+  //   })
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect(`/profiles/${req.user.profile._id}`)
+  // })
+
+  // console.log("zodiac_id: " + )
+  // console.log("comment_id: " + )
+  // Zodiac.findById(req.user.profile._id)
+  // .then(profile => {
+  //   profile.cats.remove({_id: req.params.id})
+  //   profile.save()
+  //   .then(()=> {
+  //     res.redirect(`/profiles/${req.user.profile._id}`)
+  //   })
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect(`/profiles/${req.user.profile._id}`)
+  // })
 
 export {
   index,
