@@ -2,12 +2,21 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const thoughtSchema = new mongoose.Schema({
+  title: String,
+  mood: String,
+  comment: String, 
+}, {
+  timestamps: true
+})
+
 const profileSchema = new mongoose.Schema({
   name: String,
   dob: Date,
   avatar: String,
   // hasVoted: Boolean,
-  zodiac: {type: Schema.Types.ObjectId, ref: "Zodiac"}
+  // zodiac: {type: Schema.Types.ObjectId, ref: "Zodiac"},
+  thoughts: [thoughtSchema]
 }, {
   timestamps: true
 })

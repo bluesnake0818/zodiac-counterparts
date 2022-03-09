@@ -1,0 +1,63 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (profile.avatar) { %>
+    <div>
+      <img 
+        class="profile-avatar"
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %> avatar"
+      >
+    </div>
+  <% } %>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add a thought!</h2>
+    <form action="/profiles/<%= profile._id %>/thoughts" method="POST">
+      <label>
+        Title: 
+        <input type="text" name="title" autocomplete="off">
+      </label>
+      <label>
+        I'm feeling: 
+        <input type="text" name="mood" autocomplete="off">
+      </label>
+      <label>
+        comment: 
+        <input type="text" name="comment" autocomplete="off">
+      </label>
+      <button type="submit">Post a thought</button>
+    </form>
+  <% } %>
+
+  <% if (profile.thoughts.length)  {%>
+    <h2>
+      <%= isSelf ? "You have" : `${profile.name} has` %> thoughts! Here they are!
+    </h2>
+    <% profile.thoughts.forEach(thought => { %>
+      <h3><%= thought.title %> </h3>
+      <p>I'm feeling <%= thought.mood %> today. </p>
+      <p><%= thought.comment %> </p> 
+      <% if (isSelf) { %> 
+        <form 
+          action="/profiles/thoughts/<%= thought._id %>?_method=DELETE" 
+          method="POST"
+          style="display: inline-block;"
+        >
+          <button type="submit">Delete Post</button>
+        </form>
+      <% } %> 
+    <% }) %>
+
+
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You haven't" : `${profile.name} hasn't` %> posted any thoughts yet.
+    </h2> 
+  <% } %> 
+</main>
+
+
+<%- include('../partials/footer') %>

@@ -64,8 +64,7 @@ function update(req, res) {
   }) 
 }
 
-function createPoll(req, res) {
-  console.log("createPoll")
+function addVote(req, res) {
   console.log(req.params.id)
   Zodiac.findById(req.params.id)
   .then(zodiac => {
@@ -83,7 +82,7 @@ function createPoll(req, res) {
 }
 
 function postComment(req, res) {
-  console.log('post comment')
+
   Zodiac.findById(req.params.id)
   .then(zodiac => {
     zodiac.comments.push(req.body)
@@ -99,8 +98,9 @@ function postComment(req, res) {
 }
 
 function deleteComment(req, res) {
-  const a = Zodiac.findOne({ 'comments._id': req.params.id}).parent.id
-  console.log(a)
+  // const a = Zodiac.findOne({ 'comments._id': req.params.id}).parent.id
+  // console.log(a)
+  console.log(req.params.id)
 }
   // .then(comment => {
   //   console.log(comment)
@@ -144,7 +144,7 @@ export {
   create,
   edit,
   update,
-  createPoll,
+  addVote,
   postComment,
   deleteComment,
 }
