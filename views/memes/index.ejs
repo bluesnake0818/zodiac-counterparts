@@ -12,6 +12,25 @@
 <main>
   <section>
     <h1>Memes! 🤣🤣</h1>
+    <% if (user) { %>
+      <h2>Add a Meme!</h2>
+      <form action="/memes" method="POST">
+        <label>
+          Title: 
+          <input type="text" name="title" autocomplete="off">
+        </label>
+        <label>
+          URL: 
+          <input type="text" name="URL" autocomplete="off">
+        </label>
+        <label>
+          Funny?
+          <input type="checkbox" name="funny">
+        </label>
+        <button type="submit">Add Meme</button>
+      </form>
+    <% } %>
+
     <h2>All the Memes!</h2>
     <ul>
     <% memes.forEach(meme => { %>
