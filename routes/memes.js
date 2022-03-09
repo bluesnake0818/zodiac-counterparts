@@ -12,7 +12,7 @@ router.get('/:id/edit', isLoggedIn, memesCtrl.edit)
 router.post('/', isLoggedIn, memesCtrl.create)
 router.put('/:id', isLoggedIn, memesCtrl.update)
 router.patch('/:id/flip-funny', isLoggedIn, memesCtrl.flipFunny)
-
+router.delete('/:id', isLoggedIn, memesCtrl.delete)
 
 
 export {

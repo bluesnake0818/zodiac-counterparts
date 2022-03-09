@@ -90,6 +90,24 @@ function update(req, res) {
   })
 }
 
+function deleteMeme(req, res) {
+  Meme.findById(req.params.id)
+  .then(meme => {
+    if (meme.author.equals(req.user.profile._id)) {
+      meme.delete()
+      .then(() => {
+        res.redirect('/memes')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/memes')
+  })
+}
+
 export {
   index, 
   create,
@@ -97,4 +115,5 @@ export {
   flipFunny,
   edit,
   update,
+  deleteMeme as delete,
 }

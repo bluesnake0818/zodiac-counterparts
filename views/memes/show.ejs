@@ -23,8 +23,11 @@
       <form action="/memes/<%= meme._id %>/edit" method="GET">
         <button class="btn" type="submit">Edit this Meme 😜😂</button>
       </form>
+      <form action="/memes/<%= meme._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete this meme 💀</button>
+      </form>
     <% } %>
-    <%# New code above %>  
+    
   </section>
 </main>
 
