@@ -10,6 +10,7 @@ router.get('/:id', memesCtrl.show)
 
 router.post('/', isLoggedIn, memesCtrl.create)
 
+router.patch('/:id/flip-funny', isLoggedIn, memesCtrl.flipFunny)
 
 export {
   router

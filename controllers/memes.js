@@ -42,8 +42,25 @@ function show(req, res) {
   })
 }
 
+function flipFunny(req, res) {
+  Meme.findById(req.params.id)
+  .then(meme => {
+    meme.funny = !meme.funny
+    meme.save()
+    .then(()=> {
+      res.redirect(`/memes/${meme._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/memes')
+  })
+}
+
+
 export {
   index, 
   create,
   show,
+  flipFunny,
 }
