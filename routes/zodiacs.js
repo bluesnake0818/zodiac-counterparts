@@ -10,13 +10,13 @@ router.get('/', zodiacsCtrl.index)
 // GET - localhost:3000/zodiacs/:id
 router.get('/:id', zodiacsCtrl.show)
 // GET - localhost:3000/zodiacs/:id/edit
-router.get('/:id/edit', zodiacsCtrl.edit)
+router.get('/:id/edit', isLoggedIn, zodiacsCtrl.edit)
 
 // POST - localhost:3000/zodiacs
-router.post('/', zodiacsCtrl.create)
+router.post('/', isLoggedIn, zodiacsCtrl.create)
 
 // PUT - localhost:3000/zodiacs/:id
-router.put('/:id', zodiacsCtrl.update)
+router.put('/:id', isLoggedIn, zodiacsCtrl.update)
 
 // POST - localhost:3000/zodiacs/:id/polls
 router.post('/:id/polls', isLoggedIn, zodiacsCtrl.addVote)
@@ -28,11 +28,6 @@ router.post('/:id/comments', isLoggedIn, zodiacsCtrl.postComment)
 router.delete('/comments/:id', isLoggedIn, zodiacsCtrl.deleteComment)
 
 
-
-// PUT - localhost:3000/zodiacs/:id
-// router.put('/:id', zodiacsCtrl.update)
-
-// isLoggedIn,
 
 export {
   router

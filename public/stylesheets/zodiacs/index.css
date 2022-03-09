@@ -17,7 +17,7 @@ p
 #zod-signs-area {
   margin-top: 5rem;
   width: 36rem;
-  height: 32rem;
+  min-height: 50rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -27,6 +27,23 @@ p
 #zod-signs-area > #first-row, #second-row, #third-row, #fourth-row {
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
 }
 
+p.zod-name {
+  font-size: 1.2rem;
+}
 
+p.bday {
+  font-size: 1rem;
+}
+
+img {
+  margin: 0 auto;
+}
+
+/* a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
