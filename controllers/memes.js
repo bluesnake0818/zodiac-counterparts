@@ -57,10 +57,44 @@ function flipFunny(req, res) {
   })
 }
 
+function edit(req, res) {
+  Meme.findById(req.params.id)
+  .then(meme => {
+    res.render('memes/edit', {
+      meme,
+      title: "Edit Meme"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/memes')
+  })
+}
+
+function update(req, res) {
+  Meme.findById(req.params.id)
+  .then(meme => {
+    if (meme.author.equals(req.user.profile._id)) {
+      req.body.funny = !!req.body.tasty
+      meme.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/memes/${meme._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/memes`)
+  })
+}
 
 export {
   index, 
   create,
   show,
   flipFunny,
+  edit,
+  update,
 }

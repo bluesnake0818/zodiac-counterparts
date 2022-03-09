@@ -1,0 +1,38 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/memes/edit.css" />
+<%- include('../partials/nav') %>
+<main>
+  <section>
+    <h1>Edit the Meme! 😎</h1>
+    <form action="/memes/<%= meme._id %>?_method=PUT" method="POST">
+      <label>
+        Title: 
+        <input 
+          type="text"
+          name="title" 
+          value="<%= meme.title %>" 
+          autocomplete="off"
+        >
+      </label>
+      <label>
+        URL: 
+        <input 
+          type="text"
+          name="url" 
+          value="<%= meme.url %>" 
+          autocomplete="off"
+        >
+      </label>
+      <label>
+        Funny?
+        <input 
+          type="checkbox" 
+          name="funny" 
+          <%= meme.funny ? "checked" : "" %> 
+        >
+      </label>
+      <button type="submit">Edit the meme😆</button>
+    </form>
+  </section>
+</main>
+<%- include('../partials/footer') %>

@@ -18,6 +18,13 @@
         </button>
       </form>
     <% } %>
+    <%# New code below %>
+    <% if (meme.author.equals(user?.profile._id)) { %>
+      <form action="/memes/<%= meme._id %>/edit" method="GET">
+        <button class="btn" type="submit">Edit this Meme 😜😂</button>
+      </form>
+    <% } %>
+    <%# New code above %>  
   </section>
 </main>
 
