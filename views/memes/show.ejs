@@ -4,29 +4,29 @@
 
 <main>
   <section>
-    <p>From the studio of <%= meme.author.name %>...</p>
     <h1><%= meme.title %> 😜😜😜😜</h1>
     <h2>Show Meme: <a href="<%= meme.url %>"><%= meme.title %></a></h2>
     <h2>This meme is <%= meme.funny ? 'funny! 😋' : 'not funny! 😫' %></h2>
     <% if (user) { %>
       <form 
-        action="/memes/<%= meme._id %>/flip-funny?_method=PATCH" 
-        method="POST"
+      action="/memes/<%= meme._id %>/flip-funny?_method=PATCH" 
+      method="POST"
       >
-        <button class="btn" type="submit">
-          Make meme <%= meme.funny ? 'not funny 🌮🥺' : 'funny 🌮🎉' %>
-        </button>
-      </form>
+      <button class="form-button btn" type="submit">
+        Make meme <%= meme.funny ? 'not funny 🌮🥺' : 'funny 🌮🎉' %>
+      </button>
+    </form>
     <% } %>
     <%# New code below %>
     <% if (meme.author.equals(user?.profile._id)) { %>
       <form action="/memes/<%= meme._id %>/edit" method="GET">
-        <button class="btn" type="submit">Edit this Meme 😜😂</button>
+        <button class="form-button btn" type="submit">Edit this Meme 😜😂</button>
       </form>
       <form action="/memes/<%= meme._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Delete this meme 💀</button>
+        <button class="form-button btn" type="submit">Delete this meme 💀</button>
       </form>
-    <% } %>
+      <% } %>
+      <p id="studio-name">From the studio of <%= meme.author.name %>...</p>
     
   </section>
 </main>

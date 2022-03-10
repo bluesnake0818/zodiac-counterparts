@@ -64,6 +64,16 @@ function update(req, res) {
   }) 
 }
 
+function deleteZodiac(req, res) {
+  console.log('delete zodiac')
+  // Zodiac.findByIdAndDelete(req.params.id)
+  // .then(zodiac => res.json(zodiac))
+  // .catch(err => {
+  //   console.log(err)
+  //   res.json(err)
+  // })
+}
+
 function addVote(req, res) {
   console.log(req.params.id)
   Zodiac.findById(req.params.id)
@@ -144,6 +154,7 @@ export {
   create,
   edit,
   update,
+  deleteZodiac as delete,
   addVote,
   postComment,
   deleteComment,

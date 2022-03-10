@@ -16,6 +16,7 @@ html {
   font-size: 62.5%;
   --cursive: 'Festive', cursive;
   --roboto_mono: 'Roboto Mono', monospace;
+  --mochiy_pop_one: 'Mochiy Pop One', sans-serif;
 }
 
 body {
@@ -42,9 +43,12 @@ nav {
   align-items: center;
   padding-right: 2rem;
   width: 500px;
-  font-family: var(--roboto_mono);
+  /* font-family: var(--roboto_mono); */
+  font-family: var(--mochiy_pop_one);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 main {
@@ -55,7 +59,8 @@ main {
   flex-direction: column;
   min-height: 1000px;
   width: 500px;
-  font-family: var(--roboto_mono);
+  /* font-family: var(--roboto_mono); */
+  font-family: var(--mochiy_pop_one);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -74,15 +79,15 @@ p {
 }
 
 .btn {
-  margin: 20px;
+  margin: 2rem 0 2rem 0;
   border-radius: 5px;
   border-color: #FF6E6E;
-  width: 100%;
-  height: 50px;
+  width: 40rem;
+  height: 5rem;
   background-color: transparent;
   color: #FF6E6E;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 2rem;
   transition: none;
   box-shadow: none;
 }
@@ -92,11 +97,12 @@ p {
   width: 40rem;
 }
 
-.start-button:hover {
+.btn:hover {
   background-color: #FF6E6E;
   color: whitesmoke;
   
 }
+
 
 .btn:focus {
   box-shadow: none;
@@ -107,4 +113,23 @@ p {
   height: 15rem;
   width: 30rem;
   margin-bottom: 7rem;
+}
+
+form {
+  display: in;
+}
+
+nav > #nav-buttons {
+  margin-left: 2rem;
+  min-width: 16rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+#logout-button {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
 }

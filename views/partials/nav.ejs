@@ -4,18 +4,22 @@
 </head>
 <body>
   <nav>
-    <a id="profile-logo" href="/zodiacs"><button>Zodiacs</button></a>
-    <a id="meme-logo" href="/memes"><button>Memes</button></a>
-    <a id="profile-logo" href="/profiles"><button>Profiles</button></a>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
+    <div id="nav-buttons">
+      <a id="profile-logo" href="/zodiacs">♉️</a>
+      <a id="meme-logo" href="/memes">🏭</a>
+      <a id="profile-logo" href="/profiles">🧑</a>
+    </div>
+    <div id="login-button">
+      <% if (user) { %>
+        <a href="/auth/logout">
+          <button id="logout-button" type="submit">👋</button>
+        </a>
+      <% } else { %>
+        <a href="/auth/google" class="siwg-link">
+          <button type="submit" class="siwg">
+            <img id="siwg-image" alt="Sign in with Google" />
+          </button>
+        </a>
+      <% } %>
+    </div>
   </nav>

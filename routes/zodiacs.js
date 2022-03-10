@@ -21,6 +21,9 @@ router.put('/:id', isLoggedIn, zodiacsCtrl.update)
 // POST - localhost:3000/zodiacs/:id/polls
 router.post('/:id/polls', isLoggedIn, zodiacsCtrl.addVote)
 
+// DELETE - localhost:3000/zodiacs/:id
+router.delete('/:id', isLoggedIn, zodiacsCtrl.delete)
+
 // POST - localhost:3000/zodiacs/:id/comments
 router.post('/:id/comments', isLoggedIn, zodiacsCtrl.postComment)
 

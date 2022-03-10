@@ -7,6 +7,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* min-width: 50rem; */
 }
 
 p
@@ -22,28 +23,43 @@ p
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-decoration: none;
 }
 
 #zod-signs-area > #first-row, #second-row, #third-row, #fourth-row {
   display: flex;
   justify-content: space-between;
+  min-height: 12rem;
+  /* min-width: 40rem; */
   /* align-items: center; */
 }
 
 p.zod-name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  min-width: 5rem;
+  margin: 0;
+  font-weight: bold;
 }
 
 p.bday {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  min-width: 5rem;
+  margin: 0;
 }
 
 img {
   margin: 0 auto;
 }
 
-/* a {
+a {
+  text-decoration: none;
+  color: #6661F1;
+}
+
+a.zodiac-img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-} */
+  width: 12rem;
+}
