@@ -5,6 +5,12 @@ form {
   min-height: 12rem;
 }
 
+
+label.form-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 div#edit-thought{
   width: 40rem;
   font-size: 1.4rem;
@@ -72,3 +78,17 @@ form.delete, form.edit {
   display: inline;
 }
 
+#input-field {
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* align-items: stretch; */
+}
+
+input[type=text] {
+  min-width: 260px;
+}
+select {
+  margin-right: 210px;
+}
