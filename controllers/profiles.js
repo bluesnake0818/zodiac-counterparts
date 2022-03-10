@@ -54,8 +54,12 @@ function createThought(req, res) {
 function editThought(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    const thought = profile.thoughts.filter(thought => {
+      return thought._id.toString() === req.params.thoughtId
+    })[0]
     res.render('profiles/edit', {
       profile,
+      thought,
       title: "edit thought"
     })
   })
@@ -66,34 +70,24 @@ function editThought(req, res) {
 }
 
 function updateThought(req, res) {
-  Profile.findById(req.params.id)
-  .then((profile) => {
-    Profile.findById(req.user.profile._id)
-    .then(self => {
-      const isSelf = self._id.equals(profile._id)
-      profile.updateOne(req.body, {new: true})
-      .then(() => {
-        res.redirect(`/profiles/${profile._id}`)
-      })
+  Profile.updateOne(
+    {_id: req.params.id, "thoughts._id": req.params.thoughtId}, 
+    {
+      $set: 
+      {
+        "thoughts.$.title": req.body.title,
+        "thoughts.$.mood": req.body.mood,
+        "thoughts.$.comment": req.body.comment,
+      }
     })
+  .then(() => {
+    res.redirect(`/profiles/${req.params.id}`)
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/profiles`)
+    res.redirect(`/profiles/${req.params.id}`)
   })
 }
-    
-  // })
-
-  // .then(profile => {
-  //   if (profile._id.equals(req.user.profile._id)) {
-  //     profile.updateOne(req.body, {new: true})
-  //     .then(()=> {
-  //       res.redirect(`/profile/${profile._id}`)
-  //     })
-  //   } else {
-  //     throw new Error ('🚫 Not authorized 🚫')
-  //   }
 
 function deleteThought(req, res) {
   Profile.findById(req.user.profile._id)

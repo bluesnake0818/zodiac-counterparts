@@ -17,16 +17,18 @@
     </div>
 
     <% if(user) { %> 
-      <p id="question">Q: Which zodiac is more accurate? (vote only if you belong to this group)</p>
-      <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
-        <label>
-          <%= zodiac.wZodName %>
-          <input type="radio" name="name" value="<%= zodiac.wZodName %>">
-          <%= zodiac.eZodName %>
-          <input type="radio" name="name" value="<%= zodiac.eZodName %>"> 
-        </label>
-        <button type="submit" id="submit-btn">Submit</button>
-      </form>
+      <% if(!hasVoted) {%>  
+        <p id="question">Q: Which zodiac is more accurate? (vote only if you belong to this group)</p>
+        <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
+          <label>
+            <%= zodiac.wZodName %>
+            <input type="radio" name="name" value="<%= zodiac.wZodName %>">
+            <%= zodiac.eZodName %>
+            <input type="radio" name="name" value="<%= zodiac.eZodName %>"> 
+          </label>
+          <button type="submit" id="submit-btn">Submit</button>
+        </form>
+      <% } %>  
       <%
         let wCount = 0
         let eCount = 0
@@ -69,9 +71,9 @@
           <% if(zodiac.comments.length) { %> 
             <% zodiac.comments.forEach(comment => { %> 
               <p><%= comment.content %></p>
-              <% console.log(zodiac.id) %> 
+              <% console.log(zodiac._id) %> 
               <form 
-                action="/zodiacs/comments/<%= comment.id %>?_method=DELETE"
+                action="/zodiacs/<%= zodiac._id %>/comments/<%= comment._id %>?_method=DELETE"
                 method="POST"
                 style="display: inline-block;"
               >
@@ -87,6 +89,16 @@
       <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
     <% } %> 
       
+
+    <form 
+      class="delete"
+      action="/zodiacs/<%= zodiac._id %>?_method=DELETE" 
+      method="POST"
+      >
+        <button class="delete-btn btn" type="submit">Delete Zodiac</button>
+    </form>
+
+    <!-- <a href="/zodiacs/<%= zodiac._id %>/comments">View Comments</a> -->
   </section>
 </main>
 

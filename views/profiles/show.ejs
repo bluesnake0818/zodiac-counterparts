@@ -60,7 +60,7 @@
       <% if (isSelf) { %> 
         <form 
         class="edit" 
-        action="/profiles/<%= thought._id %>/edit" 
+        action="/profiles/<%= profile._id %>/thoughts/<%= thought._id %>/edit" 
         method="GET"
         >
           <button class="edit-btn btn" type="submit">Edit</button>

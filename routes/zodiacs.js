@@ -27,10 +27,10 @@ router.delete('/:id', isLoggedIn, zodiacsCtrl.delete)
 // POST - localhost:3000/zodiacs/:id/comments
 router.post('/:id/comments', isLoggedIn, zodiacsCtrl.postComment)
 
-// DELETE - localhost:3000/zodiacs/comments/Id
-router.delete('/comments/:id', isLoggedIn, zodiacsCtrl.deleteComment)
+// DELETE - localhost:3000/zodiacs/:zodiacId/comments/:commentId
+router.delete('/:zodiacId/comments/:commentId', isLoggedIn, zodiacsCtrl.deleteComment)
 
-
+// router.get('/:zodiacId/comments/', isLoggedIn, zodiacsCtrl.commentsIndex)
 
 export {
   router

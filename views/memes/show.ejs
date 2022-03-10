@@ -6,14 +6,14 @@
   <section>
     <h1><%= meme.title %> 😜😜😜😜</h1>
     <h2>Show Meme: <a href="<%= meme.url %>"><%= meme.title %></a></h2>
-    <h2>This meme is <%= meme.funny ? 'funny! 😋' : 'not funny! 😫' %></h2>
+    <h2>This meme is <%= meme.funny ? 'funny! 🤣' : 'not funny! 😫' %></h2>
     <% if (user) { %>
       <form 
       action="/memes/<%= meme._id %>/flip-funny?_method=PATCH" 
       method="POST"
       >
       <button class="form-button btn" type="submit">
-        Make meme <%= meme.funny ? 'not funny 🌮🥺' : 'funny 🌮🎉' %>
+        Make meme <%= meme.funny ? 'not funny 🥺' : 'funny 🎉' %>
       </button>
     </form>
     <% } %>

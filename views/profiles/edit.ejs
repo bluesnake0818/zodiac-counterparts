@@ -8,8 +8,7 @@
     <h1>Edit your thought</h1>
 
     <div id="edit-thought">
-      <% profile.thoughts.forEach(thought => { %>
-        <form action="/profiles/<%= thought._id %>?_method=PUT" method="POST">
+        <form action="/profiles/<%=profile._id %>/thoughts/<%= thought._id %>?_method=PUT" method="POST">
           <div id="input-field">
             <label class="form-item">
               Title: 
@@ -33,7 +32,7 @@
           </div>
           <button class="btn edit-btn" type="submit">Edit Post</button>
         </form>
-      <% }) %> 
+
     </div>
 
   </section>

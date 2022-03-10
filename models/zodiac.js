@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
 })
 
 const pollSchema = new mongoose.Schema({
-  author: {type: Schema.Types.ObjectId, ref: "Profile"},
+  voter: {type: Schema.Types.ObjectId, ref: "Profile"},
   name: String,
 }, {
   timestamps: true
