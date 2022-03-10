@@ -3,6 +3,8 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  
   <% if (profile.avatar) { %>
     <div>
       <img 
@@ -12,55 +14,72 @@
       >
     </div>
   <% } %>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  
+  <div id="add-thought">
   <% if (isSelf)  {%> 
     <h2>Add a thought!</h2>
     <form action="/profiles/<%= profile._id %>/thoughts" method="POST">
-      <label>
-        Title: 
-        <input type="text" name="title" autocomplete="off">
-      </label>
-      <label>
-        I'm feeling: 
-        <input type="text" name="mood" autocomplete="off">
-      </label>
-      <label>
-        Comment: 
-        <input type="text" name="comment" autocomplete="off">
-      </label>
-      <button type="submit">Post a thought</button>
+      <div id="input-filed">
+        <label class="form-item">
+          Title: 
+          <input type="text" name="title" size="30" autocomplete="off" placeholder="Lucky day for me 💰" required>
+        </label>
+        <label class="form-item">
+          I'm feeling: 
+            <select name="mood" required>
+              <option value="☀️">☀️</option>
+              <option value="🌤">🌤</option>
+              <option value="🌥">🌥</option>
+              <option value="🌧">🌧</option>
+              <option value="⚡️">⚡️</option>
+              <option value="🌈">🌈</option>
+            </select>
+        </label>
+        <label class="form-item">
+          Memo: 
+          <input type="text" name="comment" size="30" autocomplete="off" placeholder="I picked up a 20-dollar-bill" required>
+        </label>
+      </div>
+      <button class="form-btn btn" type="submit">Post a thought</button>
     </form>
   <% } %>
+  </div>  
 
+  <div id="show-thought">
   <% if (profile.thoughts.length)  {%>
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> thoughts! Here they are!
+      Here are <%= isSelf ? "your" : `${profile.name}'s` %> thoughts! 
     </h2>
     <% profile.thoughts.forEach(thought => { %>
-      <h3><%= thought.title %> </h3>
-      <p>I'm feeling <%= thought.mood %> today. </p>
-      <p><%= thought.comment %> </p> 
+      <div id="show-items">
+        <p><%= thought.title.toUpperCase() %> </p>
+        <p>I'm feeling <%= thought.mood %> today. </p>
+        <p><%= thought.comment %> </p> 
+        <p><%= thought.createdAt.toDateString() %> </p> 
+      </div>
       <% if (isSelf) { %> 
-        <form action="/profiles/<%= thought._id %>/edit" method="GET">
-          <button class="btn" type="submit">Edit this thought</button>
+        <form 
+        class="edit" 
+        action="/profiles/<%= thought._id %>/edit" 
+        method="GET"
+        >
+          <button class="edit-btn btn" type="submit">Edit</button>
         </form>
         <form 
-          action="/profiles/thoughts/<%= thought._id %>?_method=DELETE" 
-          method="POST"
-          style="display: inline-block;"
+        class="delete"
+        action="/profiles/thoughts/<%= thought._id %>?_method=DELETE" 
+        method="POST"
         >
-          <button type="submit">Delete Post</button>
+          <button class="delete-btn btn" type="submit">Delete</button>
         </form>
       <% } %> 
     <% }) %>
-
-
   <% } else { %>
     <h2>
       <%= isSelf ? "You haven't" : `${profile.name} hasn't` %> posted any thoughts yet.
     </h2> 
   <% } %> 
-
+  </div>
 
 </main>
 

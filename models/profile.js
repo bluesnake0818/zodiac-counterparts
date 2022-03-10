@@ -4,7 +4,11 @@ const Schema = mongoose.Schema
 
 const thoughtSchema = new mongoose.Schema({
   title: String,
-  mood: String,
+  mood: 
+  {
+    type: String,
+    enum: ["☀️", "🌤", "🌥", "🌧", "⚡️", "🌈"]
+  },
   comment: String, 
 }, {
   timestamps: true

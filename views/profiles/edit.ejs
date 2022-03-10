@@ -1,29 +1,32 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/edit.css" />
 <%- include('../partials/nav') %>
 
 
 <main>
   <section>
-
     <h1>Edit your thought</h1>
-    <% profile.thoughts.forEach(thought => { %>
-    
-    <form action="/profiles/<%= thought._id %>?_method=PUT" method="POST">
-      <label>
-        Title: 
-        <input type="text" name="title" value="<%= thought.title %>" autocomplete="off">
-      </label>
-      <label>
-        I'm feeling: 
-        <input type="text" name="mood" value="<%= thought.mood %>" autocomplete="off">
-      </label>
-      <label>
-        Comment: 
-        <input type="text" name="comment" value="<%= thought.comment %>" autocomplete="off">
-      </label>
-      <button type="submit">Edit Post</button>
-    </form>
-    <% }) %> 
+
+    <div id="edit-thought">
+      <% profile.thoughts.forEach(thought => { %>
+        <form action="/profiles/<%= thought._id %>?_method=PUT" method="POST">
+          <label>
+            Title: 
+            <input type="text" name="title" value="<%= thought.title %>" autocomplete="off">
+          </label>
+          <label>
+            I'm feeling: 
+            <input type="text" name="mood" value="<%= thought.mood %>" autocomplete="off">
+          </label>
+          <label>
+            Comment: 
+            <input type="text" name="comment" value="<%= thought.comment %>" autocomplete="off">
+          </label>
+          <button class="btn edit-btn" type="submit">Edit Post</button>
+        </form>
+      <% }) %> 
+    </div>
+
   </section>
 </main>
 

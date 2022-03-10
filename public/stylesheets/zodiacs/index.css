@@ -16,8 +16,8 @@ p
 }
 
 #zod-signs-area {
-  margin-top: 5rem;
-  width: 36rem;
+  margin-top: 4rem;
+  width: 42rem;
   min-height: 50rem;
   display: flex;
   flex-direction: column;
@@ -62,4 +62,8 @@ a.zodiac-img {
   flex-direction: column;
   justify-content: center;
   width: 12rem;
+}
+
+p#cta-prompt {
+  margin-top: 4rem;
 }

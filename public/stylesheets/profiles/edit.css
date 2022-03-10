@@ -1,15 +1,11 @@
-h1 {
-  margin-bottom: 5rem;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 12rem;
 }
 
-img.profile-avatar {
-  margin-bottom: 5rem;
-  border-radius: 5px;
-  width: 20rem;
-  height: 20rem;
-}
-
-div#add-thought, #show-thought {
+div#edit-thought{
   width: 40rem;
   font-size: 1.4rem;
 }
@@ -48,24 +44,19 @@ label.form-item {
   box-shadow: none;
 }
 
-.form-btn {
+.edit-btn {
   margin-top: 4rem;
   width: 40rem;
   margin-left: 0;
   margin-right: 0;
 }
 
-.form-btn:hover {
+.edit-btn:hover {
   background-color: #FF6E6E;
   color: whitesmoke;
 }
 
-.edit-btn, .delete-btn {
-  width: 6rem;
-  height: 3rem;
-  font-size: 1rem;
-  /* display: inline; */
-}
+
 
 p{
   font-size: 1.4rem;
