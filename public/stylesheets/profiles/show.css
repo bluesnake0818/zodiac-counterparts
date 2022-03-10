@@ -80,3 +80,14 @@ h2 {
 form.delete, form.edit {
   display: inline;
 }
+
+#input-field {
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+select {
+  margin-right: 214px;
+}

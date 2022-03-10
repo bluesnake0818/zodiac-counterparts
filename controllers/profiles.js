@@ -36,6 +36,9 @@ function show(req, res) {
 function createThought(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    for (let key in req.body) {
+      if(req.body[key] === "") delete req.body[key]
+    }
     profile.thoughts.push(req.body)
     profile.save()
     .then(() => {

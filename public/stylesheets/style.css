@@ -133,3 +133,15 @@ nav > #nav-buttons {
   border: none;
   font-size: 3rem;
 }
+
+input[type=text] {
+  border: none;
+  background-color:	rgb(66, 66, 66, 0.2);
+  border-radius: 5px;
+}
+
+select {
+  border: none;
+  background-color:	rgb(66, 66, 66, 0.2);
+  border-radius: 5px;
+}

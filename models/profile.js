@@ -9,7 +9,12 @@ const thoughtSchema = new mongoose.Schema({
     type: String,
     enum: ["☀️", "🌤", "🌥", "🌧", "⚡️", "🌈"]
   },
-  comment: String, 
+  comment: 
+  {
+    type: String, 
+    default: "."
+  }
+  
 }, {
   timestamps: true
 })

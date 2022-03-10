@@ -67,10 +67,17 @@ label.form-item {
   color: whitesmoke;
 }
 
+#input-field {
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 input[type=checkbox] {
   vertical-align: text-bottom;
   transform : scale(1.2);
-  
+  /* background-color:	rgb(66, 66, 66, 0.2); */
 }
 
 
