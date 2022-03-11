@@ -61,12 +61,12 @@ function update(req, res) {
   .then(zodiac => {
     zodiac.updateOne(req.body, {new: true})
     .then(() => {
-      res.redirect(`/zodiacs/${zodiac.id}`)
+      res.redirect(`/zodiacs/${req.params.id}`)
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`zodiac`)
+    res.redirect(`/zodiacs/${req.params.id}`)
   }) 
 }
 
