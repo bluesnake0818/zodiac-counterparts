@@ -6,9 +6,12 @@
 
   <img id="idx_zod_img" src="/images/assets/index_zodiac_images.png" alt="">
 
-  <p>Your Sun sign and Eastern counterpart</p>
-  <a href="/zodiacs"><button class="btn start-button" id="start-button">Start</button></a>
-  
-</main>
+  <% if(user) { %>
+    <h2><%= user.profile.name %>, welcome back!</h2>  
+  <% } else { %> 
+    <p>Your Sun sign and Eastern counterpart</p>
+    <a href="/zodiacs"><button class="btn start-button" id="start-button">Start</button></a>
+  <% } %> 
+  </main>
 
 <%- include('./partials/footer') %>

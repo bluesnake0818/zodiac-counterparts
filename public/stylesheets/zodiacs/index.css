@@ -67,3 +67,22 @@ a.zodiac-img {
 p#cta-prompt {
   margin-top: 4rem;
 }
+
+div#add-zodiac {
+  margin: 2rem
+}
+
+form {
+  /* font-size: 1.4rem; */
+  margin-top: 2rem;
+}
+
+p#warning {
+  text-align: left;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.add-btn {
+  width: 20rem;
+}
