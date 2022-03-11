@@ -59,5 +59,6 @@
 - Receive user's bday. system remembers user's bday, results.
 - 3rd party api for zodiac descriptions
 - Profile responsive CSS - customized
+- mobile responsive 
 
 
