@@ -35,9 +35,9 @@
 - 
 
 ## Findings/Questions
-- 
+- difference between .toString and .toString()
 
 ## Next Steps (backlog)
-- 
+- Pagination or Infinite Scroll for zodiac comments
 
 

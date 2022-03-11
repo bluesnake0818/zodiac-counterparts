@@ -90,22 +90,25 @@
 
     <% } else { %> 
       <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
-    <% } %> 
-    <form 
-    class="edit" 
-    action="/zodiacs/<%= zodiac._id %>/edit" 
-    method="GET"
-    >
-      <button class="edit-btn btn" type="submit">Edit Zodiac</button>
-    </form>
-    <form 
-      class="delete"
-      action="/zodiacs/<%= zodiac._id %>?_method=DELETE" 
-      method="POST"
-      >
-        <button class="delete-btn btn" type="submit">Delete Zodiac</button>
-    </form>
+    <% } %>
 
+    <% if(user?.profile._id.toString() === '622669962d4ce2771ef2a36a') { %> 
+      <p>**Admin Access**</p>
+      <form 
+      class="edit" 
+      action="/zodiacs/<%= zodiac._id %>/edit" 
+      method="GET"
+      >
+        <button class="edit-btn btn" type="submit">Edit Zodiac</button>
+      </form>
+      <form 
+        class="delete"
+        action="/zodiacs/<%= zodiac._id %>?_method=DELETE" 
+        method="POST"
+        >
+          <button class="delete-btn btn" type="submit">Delete Zodiac</button>
+      </form>
+    <% } %> 
     <!-- <a href="/zodiacs/<%= zodiac._id %>/comments">View Comments</a> -->
   </section>
 </main>

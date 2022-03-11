@@ -81,37 +81,41 @@
       <p id="cta-prompt">Click your Sun sign to see its Eastern counterpart!</p>
     </div>
 
-
-    <h2>Add a Zodiac!</h2>
-    <form action="/zodiacs" method="POST">
-      <div id="input-field">
-        <label class="form-item">
-          Western Zodiac: 
-          <input class="text-input" size="30" type="text" name="wZodName" autocomplete="off" required>
-        </label>
-        <label class="form-item">
-          Eastern Zodiac: 
-          <input class="text-input" size="30" type="text" name="eZodName"  autocomplete="off" required>
-        </label>
-        <label class="form-item">
-          Western Zodiac Desc: 
-          <input class="text-input" size="30" type="text" name="wZodDesc"  autocomplete="off" required>
-        </label>
-        <label class="form-item">
-          Eastern Zodiac Desc: 
-          <input class="text-input" size="30" type="text" name="eZodDesc"  autocomplete="off" required>
-        </label>
-        <label class="form-item">
-          Western Zodiac Image URL: 
-          <input class="text-input" size="30" type="text" name="wZodImgURL"  autocomplete="off" required>
-        </label>
-        <label class="form-item">
-          Eastern Zodiac Imgage URL: 
-          <input class="text-input" size="30" type="text" name="eZodImgURL"  autocomplete="off" required>
-        </label>
+    <% if(user?.profile._id.toString() === '622669962d4ce2771ef2a36a') { %> 
+      <div id="add-zodiac">
+        <p>**Admin Access**</p>
+        <h2>Add a Zodiac</h2>
+        <form action="/zodiacs" method="POST">
+          <div id="input-field">
+            <label class="form-item">
+              Western Zodiac: 
+              <input class="text-input" size="30" type="text" name="wZodName" autocomplete="off" required>
+            </label>
+            <label class="form-item">
+              Eastern Zodiac: 
+              <input class="text-input" size="30" type="text" name="eZodName"  autocomplete="off" required>
+            </label>
+            <label class="form-item">
+              Western Zodiac Desc: 
+              <input class="text-input" size="30" type="text" name="wZodDesc"  autocomplete="off" required>
+            </label>
+            <label class="form-item">
+              Eastern Zodiac Desc: 
+              <input class="text-input" size="30" type="text" name="eZodDesc"  autocomplete="off" required>
+            </label>
+            <label class="form-item">
+              Western Zodiac Image URL: 
+              <input class="text-input" size="30" type="text" name="wZodImgURL"  autocomplete="off" required>
+            </label>
+            <label class="form-item">
+              Eastern Zodiac Imgage URL: 
+              <input class="text-input" size="30" type="text" name="eZodImgURL"  autocomplete="off" required>
+            </label>
+          </div>
+          <button class="form-btn btn" type="submit">Add Zodiac</button>
+        </form>
       </div>
-      <button class="form-btn btn" type="submit">Add Zodiac</button>
-    </form>
+    <% } %> 
   </section>
 </main>
 
