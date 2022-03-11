@@ -21,7 +21,7 @@
   - Share and make funny / not funny
 
 ## Getting Started
-- <a href="zodiac-counterparts.herokuapp.com/">Link</a>
+- <a href="https://zodiac-counterparts.herokuapp.com/">Link</a>
 
 
 ## Screenshots
