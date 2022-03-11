@@ -57,7 +57,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  min-height: 800px;
+  min-height: 820px;
   width: 500px;
   /* font-family: var(--roboto_mono); */
   font-family: var(--mochiy_pop_one);
@@ -103,7 +103,6 @@ p {
   
 }
 
-
 .btn:focus {
   box-shadow: none;
 }
@@ -146,4 +145,11 @@ select {
   background-color:	rgb(66, 66, 66, 0.2);
   border-radius: 5px;
   min-width: 5rem;
+}
+
+p.warning {
+  text-align: left;
+  margin: 0;
+  font-size: 1rem;
+  color: red;
 }

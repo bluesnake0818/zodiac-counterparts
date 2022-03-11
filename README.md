@@ -21,14 +21,16 @@
 
 ## Cool Implementations I'd like to highlight
 - Font : Mochiy
-- Poll :
+- Poll : 
+- Author for Meme
 
 ## Getting Started
 - <a href="https://https://zodiac-counterparts.herokuapp.com/">Link</a>
 
 
 ## Screenshots
-
+<img src="https://i.imgur.com/kK1giPa_d.webp?maxwidth=760&fidelity=grand"  alt="landing">
+<img src="https://i.imgur.com/zvXj1S4_d.webp?maxwidth=760&fidelity=grand"  alt="sublanding">
 
 ## Technologies Used 
 - Mongoose, Express, Node.JS
@@ -38,18 +40,22 @@
 - Co-Star, 
 
 ## Original Wireframes
-<img src=""  alt="">
+<img src="https://i.imgur.com/JgpvbD4_d.webp?maxwidth=760&fidelity=grand"  alt="original wireframes">
 
-## Original Website Sketch
-<img src="" alt="">
+## ERD
+<img src="https://i.imgur.com/wuzG7j0_d.webp?maxwidth=760&fidelity=grand" alt="ERD">
 
 ## Challenges
+- referencing to the Profile Document from the sub-document of another document (Zodiac)
 - 
 
 ## Findings/Questions
 - difference between .toString and .toString()
 
 ## Next Steps (backlog)
+- If you make a comment in zodiac/show, a guest can't access the particular zodiac show page ( because of protected route)
+- everyone can delete anyone's comment on zodiac page. 
+- you can't edit zodiac/comments
 - Pagination or Infinite Scroll for zodiac comments
 - new page for comments
 
