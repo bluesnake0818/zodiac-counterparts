@@ -2,14 +2,14 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Find Your Zodiac Signs</h1>
+  <h1>Your Sun sign and Eastern counterpart</h1>
 
   <img id="idx_zod_img" src="/images/assets/index_zodiac_images.png" alt="">
 
   <% if(user) { %>
     <h2><%= user.profile.name %>, welcome back!</h2>  
   <% } else { %> 
-    <p>Your Sun sign and Eastern counterpart</p>
+    <p>Find Your Zodiac Signs!</p>
     <a href="/zodiacs"><button class="btn start-button" id="start-button">Start</button></a>
   <% } %> 
   </main>

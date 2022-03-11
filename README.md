@@ -3,41 +3,37 @@
 ## A MEN Stack CRUD Application
 
 ## Why I Started This
-- A lot of people know their Sun Sign. they know of the Chinese Zodiac signs, but not sure about their own signs. They are also curious to know but there's not much information out there.
-- conneciton 
-- Continuing from Unit 1, I built this website for marketing my app, which is a zodiac-based friend discovery app.
-- A variation of this product will be integrated into the company website in the future. 
+- Continuing from Unit 1, I built this with the purpose of marketing my app, which is a Chinese zodiac based friend discovery app and raise awareness of the application of Chinese Zodiac in general.
+- A lot of people know their own Western zodiac sign, so I thought it'd be fun to teach new users their Chinese sign in the context of their Western sign.
+- People generally know what Chinese Zodiac signs are, rarely do they know they own sign. 
+- All astrology shares the same root. The most widely known zodiac is the Year Zodiac. 
+- As there are Sun and Moon Signs, Rising Signs - There are Year, Day, Month, Hour signs in Chinese zodiac. 
+- The Western Sun sign corresponds to the Month Sign in Chinese Zodiac which shows the societal, environmental charcter. 
 
 ## Key Features
-- Zodiac Counterparts 
-  - Comparisons: Read (Guest), 
-  - Poll (vote) : Create (Vote), Read 
-  - Comments: Create, Read
-  - Admin Access (CRUD)
-- Profile
-  - Leave daily thoughts (CRUD)
--  Meme
-  - Make funny or not funny (CRUD)
-
-## Cool Implementations I'd like to highlight
-- Font : Mochiy
-- Poll : 
-- Author for Meme
+- Zodiac Counterparts (Main Feature)
+  - Zodiac Comparisons
+  - Participate in poll and leave comments
+  - Admin Access 
+- Profile 
+  - Leave daily thoughts
+- Zodiac Meme
+  - Share and make funny / not funny
 
 ## Getting Started
 - <a href="https://https://zodiac-counterparts.herokuapp.com/">Link</a>
 
 
 ## Screenshots
-<img src="https://i.imgur.com/kK1giPa_d.webp?maxwidth=760&fidelity=grand"  alt="landing">
 <img src="https://i.imgur.com/zvXj1S4_d.webp?maxwidth=760&fidelity=grand"  alt="sublanding">
 
 ## Technologies Used 
-- Mongoose, Express, Node.JS
+- Mongoose, Express, Node.JS, HTML, CSS
 
 ## Credits
 - Emojis: Hang5 (https://www.hangfive.co)
-- Co-Star, 
+- Co-Star, Victoria and Albert Museum, The Times of India, Chinahighlights
+- Korean blogger/astrologer (mahagaseup37) : https://blog.daum.net/mr4218/12726191
 
 ## Original Wireframes
 <img src="https://i.imgur.com/JgpvbD4_d.webp?maxwidth=760&fidelity=grand"  alt="original wireframes">
@@ -47,16 +43,20 @@
 
 ## Challenges
 - referencing to the Profile Document from the sub-document of another document (Zodiac)
-- 
 
 ## Findings/Questions
 - difference between .toString and .toString()
 
 ## Next Steps (backlog)
 - If you make a comment in zodiac/show, a guest can't access the particular zodiac show page ( because of protected route)
+- If comment becomes really long, the format breaks (zodiac / comments)
 - everyone can delete anyone's comment on zodiac page. 
 - you can't edit zodiac/comments
 - Pagination or Infinite Scroll for zodiac comments
 - new page for comments
+- dynamic nav icon, favicon
+- Refactor Poll
+- receive user's bday. system remembers user's bday, results.
+- 3rd party api for zodiac descriptions
 
 

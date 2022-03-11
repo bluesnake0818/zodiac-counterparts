@@ -4,7 +4,6 @@ import { Zodiac } from '../models/zodiac.js'
 
 
 function index(req, res) {
-  // console.log("zodiac")
   res.render('zodiacs/index', {
     title: "The Zodiac Sign Pairs"
   })
@@ -12,7 +11,6 @@ function index(req, res) {
 
 function show(req, res) {
   Zodiac.findById(req.params.id)
-  // .populate("author")
   .then(zodiac => { 
     const hasVoted = zodiac.polls.filter(poll => {
       return poll.voter.toString() === req.user.profile._id.toString()
@@ -30,7 +28,6 @@ function show(req, res) {
 }
 
 function create(req, res) {
-  // console.log("create zodiac!")
   Zodiac.create(req.body)
   .then(zodiac => res.redirect('/zodiacs'))
   .catch(err => {
@@ -54,7 +51,6 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  // console.log("update!")
   Zodiac.findById(req.params.id)
   .then(zodiac => {
     zodiac.updateOne(req.body, {new: true})

@@ -26,7 +26,6 @@ p#name {
   width: 10rem;
   font-weight: bold;
   margin: 0;
-  /* text-align: left; */
 }
 
 p#desc {
@@ -34,7 +33,6 @@ p#desc {
   width: 30rem;
   font-size: 1.4rem;
   margin: 0;
-  /* text-align: left; */
 }
 
 p#cta {
@@ -88,7 +86,6 @@ form#poll > label {
   width: 6rem;
   height: 3rem;
   font-size: 1rem;
-  /* display: inline; */
 }
 
 img.user-avatar {

@@ -67,7 +67,6 @@ a.zodiac-img {
 p#cta-prompt {
   margin-top: 1rem;
   font-size: 1rem;
-  /* font-family: (--cursive); */
 }
 
 div#add-zodiac {
@@ -75,7 +74,6 @@ div#add-zodiac {
 }
 
 form {
-  /* font-size: 1.4rem; */
   margin-top: 2rem;
 }
 
