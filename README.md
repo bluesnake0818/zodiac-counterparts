@@ -8,7 +8,7 @@
 - People generally know what Chinese Zodiac signs are, rarely do they know they own sign. 
 - All astrology shares the same root. The most widely known zodiac is the Year Zodiac. 
 - As there are Sun and Moon Signs, Rising Signs - There are Year, Day, Month, Hour signs in Chinese zodiac. 
-- The Western Sun sign corresponds to the Month Sign in Chinese Zodiac which shows the societal, environmental charcter. 
+- The Sun sign in Western astrology corresponds to the Month Sign in Chinese Zodiac which demonstrates your personality as it blends into your immediate environment (family, friends, work). 
 
 ## Key Features
 - Zodiac Counterparts (Main Feature)
