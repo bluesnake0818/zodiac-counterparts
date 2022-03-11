@@ -6,28 +6,46 @@
   <section>
     <form action="/zodiacs/<%= zodiac._id %>?_method=PUT" method="POST">
       <label>
-        <%= zodiac.wZodName %>
-        <input type="number"
-        name="wZodPollCount"
-        value="<%= zodiac.wZodPollCount %>"
-        >
+        Western Zodiac Name:
         <input type="text"
         name="wZodName"
         value="<%= zodiac.wZodName %>"
         >
-
       </label>
       <label>
-        <%= zodiac.eZodName %>
-        <input type="number"
-        name="eZodPollCount"
-        value="<%= zodiac.eZodPollCount %>"
+        Western Zodiac Description:
+        <input type="text"
+        name="wZodDesc"
+        value="<%= zodiac.wZodDesc %>"
         >
+      </label>
+      <label>
+        Western Zodiac Image URL:
+        <input type="text"
+        name="wZodImgURL"
+        value="<%= zodiac.wZodImgURL %>"
+        >
+      </label>
+      <label>
+        Eastern Zodiac Name:
         <input type="text"
         name="eZodName"
         value="<%= zodiac.eZodName %>"
         >
-
+      </label>
+      <label>
+        Eastern Zodiac Description:
+        <input type="text"
+        name="eZodDesc"
+        value="<%= zodiac.eZodDesc %>"
+        >
+      </label>
+      <label>
+        Eastern Zodiac Image URL:
+        <input type="text"
+        name="eZodImgURL"
+        value="<%= zodiac.eZodImgURL %>"
+        >
       </label>
       <button type="submit">Submit</button>
     </form>

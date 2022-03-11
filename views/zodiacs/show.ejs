@@ -18,11 +18,11 @@
 
     <% if(user) { %> 
       <% if(!hasVoted) {%>  
-        <p id="question">Q: Which zodiac is more accurate? (vote only if you belong to this group)</p>
+        <p id="question">Q: Which description resonates with you more? (vote only if you belong to this group)</p>
         <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
           <label>
             <%= zodiac.wZodName %>
-            <input type="radio" name="name" value="<%= zodiac.wZodName %>">
+            <input type="radio" name="name" value="<%= zodiac.wZodName %>" required>
             <%= zodiac.eZodName %>
             <input type="radio" name="name" value="<%= zodiac.eZodName %>"> 
           </label>
@@ -88,8 +88,13 @@
     <% } else { %> 
       <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
     <% } %> 
-      
-
+    <form 
+    class="edit" 
+    action="/zodiacs/<%= zodiac._id %>/edit" 
+    method="GET"
+    >
+      <button class="edit-btn btn" type="submit">Edit Zodiac</button>
+    </form>
     <form 
       class="delete"
       action="/zodiacs/<%= zodiac._id %>?_method=DELETE" 

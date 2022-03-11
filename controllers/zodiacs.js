@@ -46,12 +46,12 @@ function edit(req, res) {
   .then(zodiac => {
     res.render('zodiacs/edit', {
       zodiac, 
-      title: "Take Poll"
+      title: "Edit Zodiac"
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/zodiacs')
+    res.redirect(`/zodiacs/${req.params.id}`)
   })
 }
 
