@@ -36,7 +36,7 @@
 - Korean blogger/astrologer (mahagaseup37) : https://blog.daum.net/mr4218/12726191
 
 ## Original Wireframes
-<img src="https://i.imgur.com/JgpvbD4_d.webp?maxwidth=760&fidelity=grand"  alt="original wireframes">
+<img src="https://i.imgur.com/JgpvbD4_d.webp?maxwidth=760&fidelity=grand" alt="original wireframes">
 
 ## ERD
 <img src="https://i.imgur.com/wuzG7j0_d.webp?maxwidth=760&fidelity=grand" alt="ERD">
@@ -58,5 +58,6 @@
 - Refactor Poll
 - Receive user's bday. system remembers user's bday, results.
 - 3rd party api for zodiac descriptions
+- Profile responsive CSS - customized
 
 
