@@ -75,9 +75,7 @@
         <div id="show-comments">
           <% if(zodiac.comments.length) { %> 
             <% zodiac.comments.forEach(comment => { %> 
-              <!-- <%= console.log(comment) %> -->
-              <!-- <%= console.log(comment.author) %> -->
-              <!-- <p><%= comment.author.avatar %></p> -->
+              <!-- show user avatar here -->
               <p id="show-comment-content"><%= comment.content %></p>
               <form 
                 action="/zodiacs/<%= zodiac._id %>/comments/<%= comment._id %>?_method=DELETE"
@@ -113,7 +111,7 @@
           <button class="delete-btn btn" type="submit">Delete Zodiac</button>
       </form>
     <% } %> 
-    <!-- <a href="/zodiacs/<%= zodiac._id %>/comments">View Comments</a> -->
+    <!-- create link to new page for comments and polls here -->
   </section>
 </main>
 

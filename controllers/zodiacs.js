@@ -1,5 +1,3 @@
-// import res from 'express/lib/response'
-// import { redirect } from 'express/lib/response'
 import { Zodiac } from '../models/zodiac.js'
 
 
@@ -76,11 +74,9 @@ function deleteZodiac(req, res) {
 }
 
 function addVote(req, res) {
-  console.log(req.params.id)
   Zodiac.findById(req.params.id)
   .then(zodiac => {
     req.body = {...req.body, voter: req.user.profile._id}
-    console.log(req.body)
     zodiac.polls.push(req.body)
     zodiac.save()
     .then(() => {

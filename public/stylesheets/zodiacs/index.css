@@ -7,7 +7,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* min-width: 50rem; */
 }
 
 p
@@ -30,8 +29,6 @@ p
   display: flex;
   justify-content: space-between;
   min-height: 12rem;
-  /* min-width: 40rem; */
-  /* align-items: center; */
 }
 
 p.zod-name {
