@@ -28,7 +28,7 @@ function show(req, res) {
     })
   })
   .catch((err) => {
-    console.log(err)
+    console.log(`THE ERROR: ${err}`)
     res.redirect("/")
   })
 }
