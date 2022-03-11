@@ -21,7 +21,7 @@
   - Share and make funny / not funny
 
 ## Getting Started
-- <a href="https://https://zodiac-counterparts.herokuapp.com/">Link</a>
+- <a href="https://zodiac-counterparts.herokuapp.com/">Link</a>
 
 
 ## Screenshots
@@ -42,21 +42,21 @@
 <img src="https://i.imgur.com/wuzG7j0_d.webp?maxwidth=760&fidelity=grand" alt="ERD">
 
 ## Challenges
-- referencing to the Profile Document from the sub-document of another document (Zodiac)
+- Referencing to the Profile Document from the sub-document of another document (Zodiac)
 
 ## Findings/Questions
-- difference between .toString and .toString()
+- Difference between .toString and .toString()
 
 ## Next Steps (backlog)
 - If you make a comment in zodiac/show, a guest can't access the particular zodiac show page ( because of protected route)
 - If comment becomes really long, the format breaks (zodiac / comments)
-- everyone can delete anyone's comment on zodiac page. 
-- you can't edit zodiac/comments
+- Everyone can delete anyone's comment on zodiac page. 
+- You can't edit zodiac/comments
 - Pagination or Infinite Scroll for zodiac comments
-- new page for comments
-- dynamic nav icon, favicon
+- New page for comments
+- Dynamic nav icon, favicon
 - Refactor Poll
-- receive user's bday. system remembers user's bday, results.
+- Receive user's bday. system remembers user's bday, results.
 - 3rd party api for zodiac descriptions
 
 
