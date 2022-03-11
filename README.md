@@ -8,12 +8,24 @@
 - Continuing from Unit 1, I built this website for marketing my app, which is a zodiac-based friend discovery app.
 - A variation of this product will be integrated into the company website in the future. 
 
+## Key Features
+- Zodiac Counterparts 
+  - Comparisons: Read (Guest), 
+  - Poll (vote) : Create (Vote), Read 
+  - Comments: Create, Read
+  - Admin Access (CRUD)
+- Profile
+  - Leave daily thoughts (CRUD)
+-  Meme
+  - Make funny or not funny (CRUD)
+
+## Cool Implementations I'd like to highlight
+- Font : Mochiy
+- Poll :
+
 ## Getting Started
-- <a href="https://  /">Game Link</a>
-- There are three key features
-  - Read zodiac counterparts
-  - Share memes
-  - Post daily thoughts
+- <a href="https://https://zodiac-counterparts.herokuapp.com/">Link</a>
+
 
 ## Screenshots
 
@@ -22,14 +34,14 @@
 - Mongoose, Express, Node.JS
 
 ## Credits
-- Emojis: Hang5 (https://www.hangfive.co), Stipop (https://stipop.io), 3D Emoji for Favicon Amos Kang
-- W Zodiac Emojis:
+- Emojis: Hang5 (https://www.hangfive.co)
+- Co-Star, 
 
 ## Original Wireframes
-<img src="https://i.imgur.com/ceKYjms_d.webp?maxwidth=1520&fidelity=grand"  alt="wireframes">
+<img src=""  alt="">
 
 ## Original Website Sketch
-<img src="https://i.imgur.com/odACAaA_d.webp?maxwidth=760&fidelity=grand" alt="UI-Sketch">
+<img src="" alt="">
 
 ## Challenges
 - 
@@ -39,5 +51,6 @@
 
 ## Next Steps (backlog)
 - Pagination or Infinite Scroll for zodiac comments
+- new page for comments
 
 

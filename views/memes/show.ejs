@@ -12,7 +12,7 @@
       action="/memes/<%= meme._id %>/flip-funny?_method=PATCH" 
       method="POST"
       >
-      <button class="form-button btn" type="submit">
+      <button class="funny-btn form-button btn" type="submit">
         Make meme <%= meme.funny ? 'not funny 🥺' : 'funny 🎉' %>
       </button>
     </form>
@@ -20,10 +20,10 @@
     <%# New code below %>
     <% if (meme.author.equals(user?.profile._id)) { %>
       <form action="/memes/<%= meme._id %>/edit" method="GET">
-        <button class="form-button btn" type="submit">Edit this Meme 😜😂</button>
+        <button class="edit form-button btn" type="submit">Edit this Meme 😜😂</button>
       </form>
       <form action="/memes/<%= meme._id %>?_method=DELETE" method="POST">
-        <button class="form-button btn" type="submit">Delete this meme 💀</button>
+        <button class="delete form-button btn" type="submit">Delete this meme 💀</button>
       </form>
       <% } %>
       <p id="studio-name">From the studio of <%= meme.author.name %>...</p>

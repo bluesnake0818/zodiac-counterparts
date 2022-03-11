@@ -57,7 +57,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  min-height: 1000px;
+  min-height: 800px;
   width: 500px;
   /* font-family: var(--roboto_mono); */
   font-family: var(--mochiy_pop_one);
@@ -81,11 +81,11 @@ p {
 .btn {
   margin: 2rem 0 2rem 0;
   border-radius: 5px;
-  border-color: #FF6E6E;
+  border-color: #6661F1;
   width: 40rem;
   height: 5rem;
   background-color: transparent;
-  color: #FF6E6E;
+  color: #6661F1;
   font-weight: bold;
   font-size: 2rem;
   transition: none;
@@ -98,7 +98,7 @@ p {
 }
 
 .btn:hover {
-  background-color: #FF6E6E;
+  background-color: #6661F1;
   color: whitesmoke;
   
 }

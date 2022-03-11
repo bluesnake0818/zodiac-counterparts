@@ -12,13 +12,11 @@ function index(req, res) {
 
 function show(req, res) {
   Zodiac.findById(req.params.id)
+  // .populate("author")
   .then(zodiac => { 
-    // console.log(zodiac.polls)
     const hasVoted = zodiac.polls.filter(poll => {
-      // console.log("poll: " + poll)
       return poll.voter.toString() === req.user.profile._id.toString()
     }).length
-    // console.log("has voted?:" + hasVoted)
     res.render('zodiacs/show', {
       zodiac,
       hasVoted,
@@ -100,9 +98,9 @@ function addVote(req, res) {
 }
 
 function postComment(req, res) {
-
   Zodiac.findById(req.params.id)
   .then(zodiac => {
+    req.body = {...req.body, author: req.user.profile._id}
     zodiac.comments.push(req.body)
     zodiac.save()
     then(() => {

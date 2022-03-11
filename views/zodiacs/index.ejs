@@ -6,7 +6,8 @@
 <main>
   <section>
     <h1><%= title %> </h1>
-    <p>Your Sun sign corresponds to the "Month Zodiac" in Chinese Astrology</p>
+    <p>Your Sun sign corresponds to the "Month Zodiac" in Chinese Astrology.</p>
+    <p id="cta-prompt">Click your sign!</p>
     
 
     <div id="zod-signs-area">
@@ -78,7 +79,6 @@
           <p class="bday">Feb 19 - Mar 20</p>
         </a>
       </div>     
-      <p id="cta-prompt">Click your Sun sign to see its Eastern counterpart!</p>
     </div>
 
     <% if(user?.profile._id.toString() === '622669962d4ce2771ef2a36a') { %> 

@@ -18,7 +18,7 @@
 
     <% if(user) { %> 
       <% if(!hasVoted) {%>  
-        <p class="question-area">Q: Which description resonates with you more? (vote only if you belong to this group)</p>
+        <p class="question-area">Q: Which resonates with you more? (vote if you belong to this group)</p>
         <form id="poll" action="/zodiacs/<%= zodiac.id %>/polls" method="POST">
           <label>
             <%= zodiac.wZodName %>
@@ -46,12 +46,10 @@
       <div id="poll-results">
         <div id="w-poll-results">
           <div id="w-zod-name"> <%= zodiac.wZodName %> </div>
-          <img src="<%= zodiac.wZodImgURL %>" alt="western zodiac">
-          <div id="w-zod-count"><%= wCount %> </div>
+          <div id="w-zod-count"><%= wCount %></div>
         </div>
         <div id="e-poll-results">
           <div id="e-zod-name"> <%= zodiac.eZodName %> </div>
-          <img src="<%= zodiac.eZodImgURL %>" alt="western zodiac">
           <div id="e-zod-count"> <%= eCount %> </div>
         </div>
       </div>
@@ -60,10 +58,14 @@
         <p id="comment-title">Comments</p>
 
         <div id="post-comment">
-          
-          <form action="/zodiacs/<%= zodiac._id %>/comments" method="POST">
+          <img class="user-info user-avatar"
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+          /> 
+          <p class="user-info "><%= user.profile.name %> </p>
+          <form class="form-comment" action="/zodiacs/<%= zodiac._id %>/comments" method="POST">
             <label>
-              <input type="text" name="content" placeholder="Add comment..." autocomplete="off">
+              <input id="add-comment" type="text" name="content" placeholder="Add comment..." autocomplete="off">
             </label> 
             <button class="btn submit-btn" type="submit">Submit</button>
           </form>
@@ -73,12 +75,14 @@
         <div id="show-comments">
           <% if(zodiac.comments.length) { %> 
             <% zodiac.comments.forEach(comment => { %> 
-              <p><%= comment.content %></p>
-              <% console.log(zodiac._id) %> 
+              <!-- <%= console.log(comment) %> -->
+              <!-- <%= console.log(comment.author) %> -->
+              <!-- <p><%= comment.author.avatar %></p> -->
+              <p id="show-comment-content"><%= comment.content %></p>
               <form 
                 action="/zodiacs/<%= zodiac._id %>/comments/<%= comment._id %>?_method=DELETE"
                 method="POST"
-                style="display: inline-block;"
+                style="display: inline;"
               >
                 <button class="btn submit-btn" type="submit">X</button>
               </form>
@@ -89,7 +93,7 @@
       </div>
 
     <% } else { %> 
-      <p id="cta">Login using Google Account and find your zodiac signs for free!</p>
+      <p id="cta">Login to vote for your favorite signs!</p>
     <% } %>
 
     <% if(user?.profile._id.toString() === '622669962d4ce2771ef2a36a') { %> 
