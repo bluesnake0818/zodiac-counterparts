@@ -75,7 +75,7 @@ function update(req, res) {
   Meme.findById(req.params.id)
   .then(meme => {
     if (meme.author.equals(req.user.profile._id)) {
-      req.body.funny = !!req.body.tasty
+      req.body.funny = !!req.body.funny
       meme.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/memes/${meme._id}`)
