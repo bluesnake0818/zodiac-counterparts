@@ -3,12 +3,12 @@
 ## A MEN Stack CRUD Application
 
 ## Why I Started This
-- Continuing from Unit 1, I built this with the purpose of marketing my app, which is a Chinese zodiac based friend discovery app and raise awareness of the application of Chinese Zodiac in general.
-- A lot of people know their own Western zodiac sign, so I thought it'd be fun to teach new users their Chinese sign in the context of their Western sign.
-- People generally know what Chinese Zodiac signs are, rarely do they know they own sign. 
+- Continuing from Unit 1, I built this to market my app, a Chinese zodiac-based friend discovery app, and raise awareness of Chinese Zodiacs in general.
+- Many people know their Western zodiac sign, so I thought it'd be fun to teach new users their Chinese sign in the context of their Western sign.
+- People generally know what Chinese Zodiac signs are, but they rarely know their sign. 
 - All astrology shares the same root. The most widely known zodiac is the Year Zodiac. 
 - As there are Sun and Moon Signs, Rising Signs - There are Year, Day, Month, Hour signs in Chinese zodiac. 
-- The Sun sign in Western astrology corresponds to the Month Sign in Chinese Zodiac which demonstrates your personality as it blends into your immediate environment (family, friends, work). 
+- The Sun sign in Western astrology corresponds to the Month Sign in Chinese Zodiac, demonstrating your personality as it blends into your immediate environment (family, friends, work). 
 
 ## Key Features
 - Zodiac Counterparts (Main Feature)
